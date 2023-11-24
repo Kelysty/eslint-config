@@ -1,0 +1,77 @@
+{
+  "name": "@kelysty/eslint-config",
+  "version": "1.0.0",
+  "description": "Kelysty UI Eslint configuration",
+  "license": "MIT",
+  "author": "Kelysty",
+  "contributors": [
+    "Ivan Postarnak"
+  ],
+  "keywords": [
+    "eslint",
+    "config"
+  ],
+  "main": "index.js",
+  "files": [
+    "a11y.js",
+    "base.js",
+    "client.js",
+    "react.js",
+    "server.js",
+    "prettier.js",
+    "constants.js",
+    "import-order.js"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Kelysty/eslint-config.git"
+  },
+  "bugs": {
+    "url": "https://github.com/Kelysty/eslint-config.git/issues"
+  },
+  "homepage": "https://github.com/Kelysty/eslint-config.git#readme",
+  "scripts": {
+    "prepare": "husky install",
+    "lint": "npm run lint:js && npm run lint:other",
+    "lint:js": "eslint . --report-unused-disable-directives",
+    "lint:other": "npm run prettier -- --check",
+    "prettier": "prettier '**/*.{js,md,yaml,yml,json}' --config .prettierrc.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "dependencies": {
+    "@babel/core": "^7.23.3",
+    "@babel/eslint-parser": "^7.23.3",
+    "@babel/preset-react": "^7.23.3",
+    "@typescript-eslint/eslint-plugin": "^6.12.0",
+    "@typescript-eslint/parser": "^6.12.0",
+    "eslint-config-prettier": "^9.0.0",
+    "eslint-import-resolver-typescript": "^3.6.1",
+    "eslint-plugin-import": "^2.29.0",
+    "eslint-plugin-jsx-a11y": "^6.8.0",
+    "eslint-plugin-prettier": "^5.0.1",
+    "eslint-plugin-react": "^7.33.2",
+    "eslint-plugin-react-hooks": "^4.6.0",
+    "eslint-plugin-security": "^1.7.1"
+  },
+  "devDependencies": {
+    "@commitlint/cli": "^18.4.3",
+    "@commitlint/config-conventional": "^18.4.3",
+    "@kelysty/prettier-config": "^1.0.0",
+    "eslint": "^8.54.0",
+    "husky": "^8.0.3",
+    "nano-staged": "^0.8.0",
+    "prettier": "^3.1.0"
+  },
+  "peerDependencies": {
+    "eslint": ">=8.0.0",
+    "prettier": ">=3.0.0"
+  },
+  "nano-staged": {
+    "*.{js,ts}": [
+      "eslint --fix --quiet --report-unused-disable-directives"
+    ],
+    "*.{js,md,yaml,yml,json}": [
+      "prettier --write"
+    ]
+  }
+}
