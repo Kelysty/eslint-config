@@ -32,9 +32,9 @@
   "homepage": "https://github.com/Kelysty/eslint-config.git#readme",
   "scripts": {
     "prepare": "husky install",
-    "lint": "npm run lint:js && npm run lint:other",
+    "lint": "yarn run lint:js && yarn run lint:other",
     "lint:js": "eslint . --report-unused-disable-directives",
-    "lint:other": "npm run prettier -- --check",
+    "lint:other": "yarn run prettier -- --check",
     "prettier": "prettier '**/*.{js,md,yaml,yml,json}' --config .prettierrc.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
