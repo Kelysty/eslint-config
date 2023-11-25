@@ -85,3 +85,15 @@ If you want to enforce a convention in module import order, extend root config w
 ```
 
 This configuration file is specifying rules related to the order of import statements in your code. It helps maintain a consistent and organized structure for your imports, promoting readability and maintainability
+
+### Scripts
+
+Do not forget to add following scripts in your `package.json` file:
+
+```json
+  "scripts": {
+    "lint": "yarn run lint:js && yarn run lint:other",
+    "lint:js": "eslint . --report-unused-disable-directives",
+    "lint:other": "yarn run prettier -- --check"
+  }
+```
